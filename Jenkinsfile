@@ -38,6 +38,7 @@ pipeline {
             steps {
                 bat '''
                 set PATH=%NODEJS_HOME%;%PATH%
+                cd frontend/register
                 npm run build
                 '''
             }

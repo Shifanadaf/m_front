@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Grid, Paper, TextField, Button } from "@mui/material";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 function Signup() {
     const [name, setName] = useState("");
-    const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const navigate = useNavigate();
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate(); // Define navigate
 
     const handleSignup = (e) => {
         e.preventDefault();
@@ -16,7 +16,7 @@ function Signup() {
             .then((result) => {
                 if (result.status === 201) {
                     console.log("User Created Successfully");
-                    navigate("/login");
+                    navigate("/login"); // Use navigate to redirect
                 }
             })
             .catch((err) => {
@@ -42,7 +42,7 @@ function Signup() {
                         sx={{ mb: 2 }}
                     />
                     <TextField
-                        onChange={(e) => setEmail(e.target.value)} // Corrected this to setEmail
+                        onChange={(e) => setEmail(e.target.value)} // Fixed to set email
                         name="email"
                         required
                         label="Enter Email"
@@ -51,7 +51,7 @@ function Signup() {
                         sx={{ mb: 2 }}
                     />
                     <TextField
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)} // Fixed to set password
                         name="password"
                         required
                         label="Enter Password"

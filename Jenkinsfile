@@ -37,10 +37,7 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            environment {
-                SONAR_TOKEN = credentials('sonarqube-token') // Accessing the SonarQube token stored in Jenkins credentials
-            }
+       
         stage('SonarAnalysis'){
             environment{
                 SONAR_TOKEN=credentials('sonarqube-token')
